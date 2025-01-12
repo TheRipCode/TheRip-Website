@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ابزار شناسایی آسیب‌پذیری‌ها</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        header {
+            background-color: #111;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #900;
+        }
+        header h1 {
+            color: #f00;
+            margin: 0;
+        }
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav a {
+            color: #f00;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            color: #fff;
+            border-bottom: 2px solid #f00;
+        }
+        .container {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #f00;
+        }
+        code {
+            display: block;
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            margin: 10px 0;
+        }
+        footer {
+            background-color: #111;
+            text-align: center;
+            padding: 10px;
+            border-top: 2px solid #900;
+            color: #fff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ابزار شناسایی آسیب‌پذیری‌ها</h1>
+        <nav>
+            <a href="TheRip_Home.html">صفحه اصلی</a>
+            <a href="TheRip_Projects_Updated.html">پروژه‌ها</a>
+        </nav>
+    </header>
+    <div class="container">
+        <section>
+            <h2>توضیح کلی پروژه</h2>
+            <p>ابزاری برای اسکن وب‌سایت‌ها و شناسایی آسیب‌پذیری‌های متداول.</p>
+        </section>
+        <section>
+            <h2>پیش‌نیازها</h2>
+            <ul>
+                <li>آشنایی با زبان پایتون</li><li>کتابخانه requests</li>
+            </ul>
+        </section>
+        <section>
+            <h2>کدهای کامل</h2>
+            <code>
+import requests
+
+def check_vulnerability(url, payload):
+    response = requests.post(url, data={"input": payload})
+    if "vulnerable" in response.text.lower():
+        print(f"Vulnerability found with payload: {payload}")
+    else:
+        print("No vulnerability found.")
+
+url = "http://example.com"
+payloads = ["<script>alert(1)</script>", "' OR '1'='1"]
+
+for payload in payloads:
+    check_vulnerability(url, payload)
+</code>
+        </section>
+        <section>
+            <h2>توضیح کدها</h2>
+            <p>این ابزار با ارسال payloadهای مختلف، امنیت ورودی‌های وب‌سایت را بررسی می‌کند.</p>
+        </section>
+        <section>
+            <h2>آموزش اجرا</h2>
+            <p>URL وب‌سایت هدف را در متغیر 'url' تنظیم کنید و اسکریپت را اجرا کنید.</p>
+        </section>
+    </div>
+    <footer>
+        <p>© 2025 TheRip. تمامی حقوق محفوظ است.</p>
+    </footer>
+</body>
+</html>

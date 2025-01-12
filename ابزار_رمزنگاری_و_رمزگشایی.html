@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ابزار رمزنگاری و رمزگشایی</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        header {
+            background-color: #111;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #900;
+        }
+        header h1 {
+            color: #f00;
+            margin: 0;
+        }
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav a {
+            color: #f00;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            color: #fff;
+            border-bottom: 2px solid #f00;
+        }
+        .container {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #f00;
+        }
+        code {
+            display: block;
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            margin: 10px 0;
+        }
+        footer {
+            background-color: #111;
+            text-align: center;
+            padding: 10px;
+            border-top: 2px solid #900;
+            color: #fff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ابزار رمزنگاری و رمزگشایی</h1>
+        <nav>
+            <a href="TheRip_Home.html">صفحه اصلی</a>
+            <a href="TheRip_Projects_Updated.html">پروژه‌ها</a>
+        </nav>
+    </header>
+    <div class="container">
+        <section>
+            <h2>توضیح کلی پروژه</h2>
+            <p>پروژه‌ای برای رمزنگاری اطلاعات حساس و رمزگشایی آنها.</p>
+        </section>
+        <section>
+            <h2>پیش‌نیازها</h2>
+            <ul>
+                <li>آشنایی با الگوریتم‌های رمزنگاری پایه‌ای</li>
+            </ul>
+        </section>
+        <section>
+            <h2>کدهای کامل</h2>
+            <code>
+from cryptography.fernet import Fernet
+
+# Generate and save a key
+key = Fernet.generate_key()
+with open('key.key', 'wb') as key_file:
+    key_file.write(key)
+
+# Encrypt data
+cipher = Fernet(key)
+encrypted = cipher.encrypt(b"Sensitive Data")
+print("Encrypted:", encrypted)
+
+# Decrypt data
+decrypted = cipher.decrypt(encrypted)
+print("Decrypted:", decrypted.decode())
+</code>
+        </section>
+        <section>
+            <h2>توضیح کدها</h2>
+            <p>این کد از کتابخانه cryptography برای رمزنگاری و رمزگشایی متن استفاده می‌کند.</p>
+        </section>
+        <section>
+            <h2>آموزش اجرا</h2>
+            <p>کد را اجرا کنید و فایل 'key.key' تولید شده را برای رمزگشایی ذخیره کنید.</p>
+        </section>
+    </div>
+    <footer>
+        <p>© 2025 TheRip. تمامی حقوق محفوظ است.</p>
+    </footer>
+</body>
+</html>

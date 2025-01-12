@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دیوار آتش سفارشی</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        header {
+            background-color: #111;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #900;
+        }
+        header h1 {
+            color: #f00;
+            margin: 0;
+        }
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav a {
+            color: #f00;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            color: #fff;
+            border-bottom: 2px solid #f00;
+        }
+        .container {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #f00;
+        }
+        code {
+            display: block;
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            margin: 10px 0;
+        }
+        footer {
+            background-color: #111;
+            text-align: center;
+            padding: 10px;
+            border-top: 2px solid #900;
+            color: #fff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>دیوار آتش سفارشی</h1>
+        <nav>
+            <a href="TheRip_Home.html">صفحه اصلی</a>
+            <a href="TheRip_Projects_Updated.html">پروژه‌ها</a>
+        </nav>
+    </header>
+    <div class="container">
+        <section>
+            <h2>توضیح کلی پروژه</h2>
+            <p>پروژه‌ای برای کنترل ترافیک ورودی و خروجی شبکه با استفاده از قوانین سفارشی.</p>
+        </section>
+        <section>
+            <h2>پیش‌نیازها</h2>
+            <ul>
+                <li>آشنایی با IP و پورت‌ها</li><li>استفاده از iptables در لینوکس</li>
+            </ul>
+        </section>
+        <section>
+            <h2>کدهای کامل</h2>
+            <code>
+# Example iptables rule to block an IP
+sudo iptables -A INPUT -s 192.168.1.100 -j DROP
+
+# Example rule to allow specific port
+sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+
+# Save the rules
+sudo iptables-save > /etc/iptables/rules.v4
+</code>
+        </section>
+        <section>
+            <h2>توضیح کدها</h2>
+            <p>این دستورات iptables ترافیک ورودی از IP خاص را مسدود و پورت SSH را مجاز می‌کند.</p>
+        </section>
+        <section>
+            <h2>آموزش اجرا</h2>
+            <p>دستورات را با دسترسی sudo در ترمینال لینوکس اجرا کنید.</p>
+        </section>
+    </div>
+    <footer>
+        <p>© 2025 TheRip. تمامی حقوق محفوظ است.</p>
+    </footer>
+</body>
+</html>
